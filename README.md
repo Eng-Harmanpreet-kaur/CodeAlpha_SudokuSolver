@@ -1,25 +1,72 @@
-# Sudoku Quest — C++ Terminal Game (No `<filesystem>`)
+# 🎮 Sudoku Quest — C++ Terminal Game
 
-This project uses C++ file streams for save/load and does not include `<filesystem>`. Each player's save file is created in the current working directory as `Name_ID.txt`.
+Sudoku Quest is a terminal-based Sudoku game developed entirely in C++. It allows players to create accounts, receive a unique Player ID, solve Sudoku puzzles, track their progress, and continue playing from where they left off.
 
-## Features
-- Sign Up and Sign In with an automatically generated player ID.
-- Saves game wins and current Sudoku board in a `.txt` file.
-- Resume a saved puzzle after restarting the program.
-- Beginner 4×4 (10 wins unlock Middle), Middle 6×6 (50 Middle wins unlock Professional), Professional 9×9.
-- Randomized puzzles, Check, Hint, Solve, Reset and New Puzzle.
-- Backtracking solver and row/column/box validation.
+The game includes three difficulty levels, randomized Sudoku puzzles, an automatic hint system, a Sudoku solver, and file handling to save player information and game progress.
 
-## Compile on Windows / VS Code
-Open a terminal in the folder containing `main.cpp` and run:
-```powershell
-g++ -std=c++11 -O2 main.cpp -o sudoku.exe
-.\sudoku.exe
-```
-If your compiler supports C++17, you can also use `-std=c++17`.
+## ✨ Features
 
-## Files
-- `main.cpp` — all game logic.
-- `README.md` — these instructions.
+### 👤 Player Account Management
+- **Sign Up:** Create a new player account using your name.
+- **Automatic Player ID:** Receive a unique Player ID when creating an account.
+- **Sign In:** Access your account using your name and Player ID.
+- **Individual Records:** Each player has a separate `.txt` file to store their information and progress.
+- **Progress Recovery:** Load your saved progress when you sign in again.
 
-Save files are written next to the executable/current working directory. Keep the `.txt` files if you want to preserve progress.
+### 🎯 Three Sudoku Levels
+
+| Level | Grid Size | Box Size | Unlock Requirement |
+|-------|-----------|----------|--------------------|
+| Beginner | 4 × 4 | 2 × 2 | Available from the beginning |
+| Middle | 6 × 6 | 2 × 3 | Complete 10 Beginner games |
+| Professional | 9 × 9 | 3 × 3 | Complete 50 Middle games after unlocking Middle |
+
+### 🧩 Sudoku Game Features
+
+- **Randomized Puzzles:** Generate Sudoku puzzles with randomized solutions and empty cells.
+- **Enter or Change Values:** Fill empty cells with your chosen numbers.
+- **Check Board:** Check whether your entries contain duplicate numbers.
+- **Hint System:** Get help by filling an empty cell with a valid number.
+- **Automatic Solver:** Solve the puzzle using a recursive backtracking algorithm.
+- **Reset Puzzle:** Restore the original puzzle.
+- **New Puzzle:** Generate a different randomized puzzle.
+- **Save and Resume:** Save your current board and continue playing later.
+- **Progress Tracking:** View completed games and unlocked levels.
+
+## 🛠️ Technologies Used
+
+- **C++** — Core programming language
+- **Standard File Handling** — Reading and writing player records
+- **Text Files (`.txt`)** — Storing player details and game progress
+- **STL Vectors** — Representing Sudoku grids
+- **Random Number Generation** — Generating randomized puzzles
+- **Recursion and Backtracking** — Solving Sudoku puzzles
+
+## 📚 C++ Concepts Covered
+
+This project demonstrates the practical use of the following C++ concepts:
+
+- Structures (`struct`)
+- Functions and parameter passing
+- Conditional statements
+- Loops
+- Two-dimensional vectors
+- File handling using `ifstream` and `ofstream`
+- Random number generation
+- Recursion
+- Backtracking algorithms
+- Input validation
+- String manipulation
+- Sorting and shuffling operations using STL algorithms
+
+## 📂 Project Structure
+
+```text
+Sudoku-Quest/
+│
+├── main.cpp
+├── README.md
+│
+├── Harman_SQ-AB12CD.txt
+├── Aman_SQ-CD34EF.txt
+└── ...
